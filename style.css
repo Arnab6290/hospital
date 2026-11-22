@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  background: #f2f4f7;
+  color: #222;
+}
+
+/* top bar */
+.navbar {
+  background: #1f4e79;
+  color: white;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar h1 {
+  font-size: 18px;
+  margin: 0;
+  padding: 16px 0;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: #cfdcea;
+  font-size: 15px;
+  padding: 18px 4px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar button:hover {
+  color: white;
+}
+
+.navbar button.active {
+  color: white;
+  border-bottom-color: white;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #d9dee5;
+  border-radius: 6px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+/* the four numbers on the dashboard */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: white;
+  border: 1px solid #d9dee5;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.stat .number {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f4e79;
+}
+
+.stat .label {
+  color: #667;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 9px 10px;
+  border-bottom: 1px solid #e6e9ee;
+}
+
+th {
+  background: #f6f8fa;
+  font-size: 13px;
+  color: #444;
+}
+
+td.right, th.right {
+  text-align: right;
+}
+
+.empty {
+  color: #888;
+  padding: 12px 0;
+}
+
+/* forms */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #444;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #b9c1cc;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+button.btn {
+  background: #1f4e79;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 9px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button.btn:hover, a.btn:hover {
+  background: #173b5c;
+}
+
+a.btn {
+  background: #1f4e79;
+  color: white;
+  border-radius: 4px;
+  padding: 9px 16px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button.small {
+  padding: 4px 10px;
+  font-size: 13px;
+  margin-right: 6px;
+  border-radius: 4px;
+  border: 1px solid #1f4e79;
+  background: white;
+  color: #1f4e79;
+  cursor: pointer;
+}
+
+button.small.red {
+  border-color: #b33;
+  color: #b33;
+}
+
+button.small:hover {
+  background: #eef3f8;
+}
+
+/* status labels */
+.badge {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge.PENDING   { background: #fff2cc; color: #7a5b00; }
+.badge.CONFIRMED { background: #d9f2dd; color: #1d6b2c; }
+.badge.CANCELLED { background: #f6d9d9; color: #922; }
+
+/* messages */
+.toast {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  padding: 12px 18px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  max-width: 360px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.toast.ok    { background: #2e7d32; }
+.toast.error { background: #c62828; }
+
+.error-box {
+  background: #fdecea;
+  border: 1px solid #f1b0ab;
+  color: #8a1c14;
+  padding: 14px;
+  border-radius: 5px;
+}
+
+.hint {
+  color: #667;
+  font-size: 13px;
+  margin: 8px 0 0 0;
+}
+
+/* simple bar for the revenue report */
+.bar-cell {
+  width: 45%;
+}
+
+.bar {
+  background: #1f4e79;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .two-columns { grid-template-columns: 1fr; }
+  .navbar { flex-wrap: wrap; gap: 14px; }
+  table { font-size: 13px; }
+}
+
+/* demo version extras */
+.navbar button.reset {
+  padding: 6px 12px;
+  border: 1px solid #8fb0d0;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.demo-note {
+  background: #fff8e1;
+  border: 1px solid #f0dc9a;
+  color: #6b5a14;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin: 0 0 18px 0;
+}
